@@ -1,0 +1,11 @@
+output_*
+utils
+
+*/__pycache__
+*.pyc
+
+*.png
+*.mp4
+*.npy
+*.txt
+*.json
