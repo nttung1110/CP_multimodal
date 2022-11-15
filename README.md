@@ -12,4 +12,4 @@ pip install -r requirements.txt
 
 Check logic in main function of ```pipeline.py```
 
-Check args paramteter carefully before running inference
+Check args parameter carefully before running inference
