@@ -11,3 +11,5 @@ pip install -r requirements.txt
 ## Usage 
 
 Check logic in main function of ```pipeline.py```
+
+Check args paramteter carefully before running inference
