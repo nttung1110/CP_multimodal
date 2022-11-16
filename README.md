@@ -3,9 +3,8 @@
 ## Installation
 
 ```
-conda create --name multimodal_cp python==3.8
-conda activate multimodal_cp
-pip install -r requirements.txt
+conda create --name multimodal_module python==3.8
+conda env update -n multimodal_module --file environment.yml
 ```
 
 ## Usage 
