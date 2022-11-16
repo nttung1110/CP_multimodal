@@ -10,6 +10,8 @@ import os.path as osp
 from facenet_pytorch import MTCNN
 from hsemotion.facial_emotions import HSEmotionRecognizer
 from dotmap import DotMap
+from datetime import datetime
+
 
 
 from ES_extractor.visual_feat import cal_iou, VisualES
@@ -31,6 +33,8 @@ def run_pipeline_single_video(args, single_path_video):
     args.frame_count = frame_count
     args.path_test_video = single_path_video
     args.total_vid_frame = frame_count
+
+    start = datetime.now()
 
     # ES extractor
     ES_extractor = VisualES(args)
@@ -71,19 +75,28 @@ def run_pipeline_single_video(args, single_path_video):
     write_path = osp.join(args.output_cp_result_path, file_name)
 
     # write result stat
-
-    la = [a.tolist() for a in all_refined_peaks_track]
+    
+    la = [(a/fps).astype(int).tolist() for a in all_refined_peaks_track]
 
     # convert res_segment_ids to second-based
     res_segment_ids_second = [int(res/fps) for res in res_segment_ids]
 
+    # convert stat infor to second-based
+    res_stat = []
+
+    for a, b in zip(res_segment_ids, stat_total_cp_interval):
+        a_second = int(a/fps)
+        res_stat.append((a_second, b))
+
+    time_processing = datetime.now() - start
+
     result = {"final_cp_result": res_cp, 
                 "type": "video", 
                 "total_video_frame": frame_count, 
+                'time_processing': int(time_processing.total_seconds()),
                 "fps": int(fps), 
                 "individual_cp_result": la,
-                "segment_id_list": res_segment_ids_second,
-                "stat_total_cp_interval": stat_total_cp_interval
+                "stat_segment_seconds_total_cp_accum": res_stat
                 }
 
     with open(write_path, 'w') as fp:
@@ -100,10 +113,10 @@ if __name__ == "__main__":
     args.threshold_iou_min_track = 0.3
 
     # debug mode
-    # args.max_idx_frame_debug = 10000
+    args.max_idx_frame_debug = 10000
 
     # running mode
-    args.max_idx_frame_debug = None
+    # args.max_idx_frame_debug = None
 
     args.len_face_tracks = 30
     # args.path_test_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video/M01003YN6.mp4"
