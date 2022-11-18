@@ -18,7 +18,7 @@ class SimpleAggregator():
         self.args = args
 
 
-    def execute(self, segment_ids, binary_matrix, max_cp_found):
+    def execute(self, segment_ids, binary_matrix, score_matrix, max_cp_found):
         '''
             Input:
                 + segment_ids: list of segment interval index
@@ -28,40 +28,53 @@ class SimpleAggregator():
         print("=============Aggregating to find final impactful change point================")
         # accumulated list
         h = [0]*(len(segment_ids))
+        score = [0]*(len(segment_ids))
 
         for i in range(len(h)):
             h[i] = np.sum(binary_matrix[:, 0:(segment_ids[i])])
+            score[i] = np.sum(score_matrix[:, 0:(segment_ids[i])])
 
         # calculate f(M) based on g
         index_list = []
         total_change_point_list = []
+        total_score_list = []
 
         for i in range(len(h)):
             if i == 0:
                 total_change_point_list.append(int(h[0]))
                 index_list.append(segment_ids[0])
+                total_score_list.append(score[0])
                 continue
 
             g = h[i] - h[i-1]
+            sum_score = score[i] - score[i-1]
 
             total_change_point_list.append(int(g))
+            total_score_list.append(float(sum_score/g))#normalize based on total of change point
             index_list.append(segment_ids[i])
 
         # sort with respect to total_change_point_list
         idx_sort = np.argsort(np.array(total_change_point_list))
         prioritized_index_list = [index_list[a]  for a in idx_sort]
+        prioritized_score_list = [total_score_list[a] for a in idx_sort]
 
         # this index refers to the frame index
 
         # view as list
-        if len(prioritized_index_list) >= 3:
-            max_index_list = prioritized_index_list[-3:]
+        if len(prioritized_index_list) >= max_cp_found:
+            max_index_list = prioritized_index_list[-max_cp_found:]
+            max_score_list = prioritized_score_list[-max_cp_found:]
+        else:
+            max_index_list = prioritized_index_list
+            max_score_list = prioritized_score_list
 
         final_res = []
         for res in max_index_list:
             convert_seconds = int(res/self.args.fps)
             final_res.append(convert_seconds)
-        return final_res, total_change_point_list
+
+        # total_change_point_list = sorted(total_change_point_list, reverse=True)
+        return final_res, max_score_list, total_change_point_list
 
 
 # if __name__ == "__main__":

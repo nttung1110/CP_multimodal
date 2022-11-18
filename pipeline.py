@@ -21,7 +21,7 @@ from UCP.inference_ucp import detect_CP_tracks
 from CP_aggregator.segment_core import UniformSegmentator
 from CP_aggregator.aggregator_core import SimpleAggregator
 
-def run_pipeline_single_video(args, single_path_video):
+def run_pipeline_single_video(args, ES_extractor):
     cap = cv2.VideoCapture(args.path_test_video)
     frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -31,13 +31,16 @@ def run_pipeline_single_video(args, single_path_video):
     args.length_video_in_frame = frame_count
     args.fps = fps
     args.frame_count = frame_count
-    args.path_test_video = single_path_video
     args.total_vid_frame = frame_count
+
+    args.skip_frame = int(fps/args.min_frame_per_second)
+
+    # update args
+    ES_extractor.update_args(args)
 
     start = datetime.now()
 
     # ES extractor
-    ES_extractor = VisualES(args)
     es_signals, all_emotion_category_tracks, all_start_end_offset_track = ES_extractor.extract_sequence_frames(args.path_test_video)
 
     # UCP Detector
@@ -70,7 +73,7 @@ def run_pipeline_single_video(args, single_path_video):
     # res_cp = [13, 88]
 
     # save cp result
-    file_id = single_path_video.split('/')[-1].split('.')[0]
+    file_id = args.path_test_video.split('/')[-1].split('.')[0]
     file_name = file_id+".json"
     write_path = osp.join(args.output_cp_result_path, file_name)
 
@@ -93,6 +96,7 @@ def run_pipeline_single_video(args, single_path_video):
     result = {"final_cp_result": res_cp, 
                 "type": "video", 
                 "total_video_frame": frame_count, 
+                "num_frame_skip": args.skip_frame,
                 'time_processing': int(time_processing.total_seconds()),
                 "fps": int(fps), 
                 "individual_cp_result": la,
@@ -110,7 +114,10 @@ if __name__ == "__main__":
     args.threshold_face = 0.6
     args.model_name = 'enet_b0_8_best_afew'
     args.threshold_dying_track_len = 30
-    args.threshold_iou_min_track = 0.3
+    args.threshold_iou_min_track = 0.4
+
+    # skip frame info
+    args.min_frame_per_second = 5
 
     # debug mode
     args.max_idx_frame_debug = 10000
@@ -121,15 +128,28 @@ if __name__ == "__main__":
     args.len_face_tracks = 30
     # args.path_test_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video/M01003YN6.mp4"
     args.num_intervals = 100
-    args.output_cp_result_path = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/output_cp_3'
+    args.output_cp_result_path = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/output_cp_3_faster'
+
+    if os.path.isdir(args.output_cp_result_path) is False:
+        os.mkdir(args.output_cp_result_path)
+    
 
     args.max_cp_found = 3
 
     path_inference_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video"
     
+
+    # initialize ES extractor
+
+    face_detector = MTCNN(keep_all=False, post_process=False, min_face_size=40, device=args.device)
+    emotion_recognizer = HSEmotionRecognizer(model_name=args.model_name, device=args.device)
+    
+    ES_extractor = VisualES(args)
+    ES_extractor.initialize_model(face_detector, emotion_recognizer)
+
     for video_name in os.listdir(path_inference_video):
         full_path_video = osp.join(path_inference_video, video_name)
         
         args.path_test_video = full_path_video
 
-        run_pipeline_single_video(args, args.path_test_video)  
+        run_pipeline_single_video(args, ES_extractor)  

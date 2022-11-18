@@ -117,78 +117,78 @@ class VisualES():
         return interpolate_all_tracks
             
 
-    def extract_sequence_frames(self, video_path):
-        print("==========Extracting ES features==============")
-        # find all face tracks in a video
-        all_face_tracks = self.find_face_tracks(video_path)
+    # def extract_sequence_frames(self, video_path):
+    #     print("==========Extracting ES features==============")
+    #     # find all face tracks in a video
+    #     all_face_tracks = self.find_face_tracks(video_path)
 
-        softmax = torch.nn.Softmax(dim=1)
+    #     softmax = torch.nn.Softmax(dim=1)
 
-        #### Preprocessing facial tracks
+    #     #### Preprocessing facial tracks
 
-        # filter noisy tracks       
-        all_face_tracks = self.filter_noisy_track(all_face_tracks)
+    #     # filter noisy tracks       
+    #     all_face_tracks = self.filter_noisy_track(all_face_tracks)
 
-        # interpolate facial tracks
-        ### !!!!! NO Interpolation here !!!!!!!
-        all_face_tracks = self.interpolate_track(all_face_tracks)
+    #     # interpolate facial tracks
+    #     ### !!!!! NO Interpolation here !!!!!!!
+    #     all_face_tracks = self.interpolate_track(all_face_tracks)
 
-        # iterate and extract
-        all_es_feat_tracks = []
-        all_emotion_category_tracks = []
-        all_start_end_offset_track = []
+    #     # iterate and extract
+    #     all_es_feat_tracks = []
+    #     all_emotion_category_tracks = []
+    #     all_start_end_offset_track = []
 
-        # This is for debugging visualization only
-        cap = cv2.VideoCapture(video_path)
+    #     # This is for debugging visualization only
+    #     cap = cv2.VideoCapture(video_path)
 
-        for each_track in all_face_tracks:
-            frames_appear = each_track['frames_appear']
-            bbox = each_track['bbox']
+    #     for each_track in all_face_tracks:
+    #         frames_appear = each_track['frames_appear']
+    #         bbox = each_track['bbox']
             
-            facial_img_track = []
-            es_feature_track = []
-            emotion_cat_track = []
+    #         facial_img_track = []
+    #         es_feature_track = []
+    #         emotion_cat_track = []
 
-            start_end_track = (frames_appear[0], frames_appear[-1])
+    #         start_end_track = (frames_appear[0], frames_appear[-1])
 
-            for each_frame, each_box in zip(frames_appear, bbox):
-                [x1, y1, x2, y2] = each_box
-
-
-                cap.set(cv2.CAP_PROP_POS_FRAMES, each_frame)
-
-                ret, frame = cap.read()
-
-                x1, x2  = min(max(0, x1), frame.shape[1]), min(max(0, x2), frame.shape[1])
-                y1, y2 = min(max(0, y1), frame.shape[0]), min(max(0, y2), frame.shape[0])
-
-                face_imgs = frame[y1:y2, x1:x2]
-                emotion, scores = self.emotion_recognizer.predict_emotions(face_imgs, logits=True)
-                scores = softmax(torch.Tensor(np.array([scores])))
-
-                es_feature_track.append(scores[0].tolist())
-                emotion_cat_track.append(emotion)
-
-                facial_img_track.append(face_imgs) # this is just for visualization, comment this
-
-            es_feature_track = np.array(es_feature_track)
-
-            # debug writing here
-            # for idx, each_face_track_img in enumerate(facial_img_track):
-            #     name_path = os.path.join('./test_facial_track_debug', str(idx)+'.png')
-            #     cv2.imwrite(name_path, each_face_track_img)
+    #         for each_frame, each_box in zip(frames_appear, bbox):
+    #             [x1, y1, x2, y2] = each_box
 
 
-            all_emotion_category_tracks.append(emotion_cat_track)
-            all_es_feat_tracks.append(es_feature_track)
-            all_start_end_offset_track.append(start_end_track)
+    #             cap.set(cv2.CAP_PROP_POS_FRAMES, each_frame)
+
+    #             ret, frame = cap.read()
+
+    #             x1, x2  = min(max(0, x1), frame.shape[1]), min(max(0, x2), frame.shape[1])
+    #             y1, y2 = min(max(0, y1), frame.shape[0]), min(max(0, y2), frame.shape[0])
+
+    #             face_imgs = frame[y1:y2, x1:x2]
+    #             emotion, scores = self.emotion_recognizer.predict_emotions(face_imgs, logits=True)
+    #             scores = softmax(torch.Tensor(np.array([scores])))
+
+    #             es_feature_track.append(scores[0].tolist())
+    #             emotion_cat_track.append(emotion)
+
+    #             facial_img_track.append(face_imgs) # this is just for visualization, comment this
+
+    #         es_feature_track = np.array(es_feature_track)
+
+    #         # debug writing here
+    #         # for idx, each_face_track_img in enumerate(facial_img_track):
+    #         #     name_path = os.path.join('./test_facial_track_debug', str(idx)+'.png')
+    #         #     cv2.imwrite(name_path, each_face_track_img)
+
+
+    #         all_emotion_category_tracks.append(emotion_cat_track)
+    #         all_es_feat_tracks.append(es_feature_track)
+    #         all_start_end_offset_track.append(start_end_track)
         
-        cap.release()
+    #     cap.release()
 
-        return all_es_feat_tracks, all_emotion_category_tracks, all_start_end_offset_track
+    #     return all_es_feat_tracks, all_emotion_category_tracks, all_start_end_offset_track
 
 
-    def find_face_tracks(self, video_path):
+    def extract_sequence_frames(self, video_path):
         # finding all face tracks in video. A face track is defined as t = (l, t) where:
         #   + l represents for list of face location for that track
         #   + t represents for frame-index to the video of that track
@@ -197,10 +197,15 @@ class VisualES():
         frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         width = int(cap.get(3)) # get width
         height = int(cap.get(4)) #get height
+        softmax = torch.nn.Softmax(dim=1)
         
         all_tracks = []
         mark_old_track_idx = []
         idx_frame = -1
+
+        all_emotion_category_tracks = []
+        all_es_feat_tracks = []
+        all_start_end_offset_track = []
 
         # FOR VISUALIZING ONLY
         if self.args.visualize_debug_face_track == True:
@@ -231,6 +236,7 @@ class VisualES():
 
             if bounding_boxes is None:
                 continue
+            
 
             # Stage 1: Process dying tracks
             for idx, each_active_tracks in enumerate(all_tracks):
@@ -251,6 +257,21 @@ class VisualES():
                 best_match_track_score = 0
 
 
+                # ====================
+                # Stage 2.0: Extracting ES features from facial image
+                [x1, y1, x2, y2] = box
+                x1, x2  = min(max(0, x1), frame.shape[1]), min(max(0, x2), frame.shape[1])
+                y1, y2 = min(max(0, y1), frame.shape[0]), min(max(0, y2), frame.shape[0])
+
+                face_imgs = frame[y1:y2, x1:x2]
+                emotion, scores = self.emotion_recognizer.predict_emotions(face_imgs, logits=True)
+                scores = softmax(torch.Tensor(np.array([scores])))
+
+                es_feature = scores[0].tolist() ### this is what we need
+                emotion_cat = emotion ### this is what we need
+
+                # =====================
+                # Stage 2.1: Finding to which track this es_feature belongs to based on iou
                 for idx, each_active_tracks in enumerate(all_tracks):
                     if idx in mark_old_track_idx:
                         # ignore inactive track
@@ -268,6 +289,15 @@ class VisualES():
                     new_track = {"bbox": [box], "id": len(all_tracks), "frames_appear": [idx_frame]}
                     all_tracks.append(new_track)
 
+
+                    # also create new np array representing for new track here
+                    new_es_array_track = np.array([es_feature])
+                    new_start_end_offset_track = [idx_frame, idx_frame] #[start, end]
+
+                    all_es_feat_tracks.append(new_es_array_track)
+                    all_start_end_offset_track.append(new_start_end_offset_track)
+
+
                     # FOR VISUALIZING ONLY
                     if self.args.visualize_debug_face_track == True:
                         draw_face_track_bbox.append([box, new_track["id"]])
@@ -275,6 +305,20 @@ class VisualES():
                     # update track
                     all_tracks[best_match_track_id]['bbox'].append(box)
                     all_tracks[best_match_track_id]['frames_appear'].append(idx_frame)
+
+                    # update all_list
+
+                    ### interpolate first
+
+                    time_interpolate = idx_frame - all_tracks[best_match_track_id]['frames_appear'][-2] - 1
+
+                    if time_interpolate > 0:
+                        old_rep_track = all_es_feat_tracks[best_match_track_id][-1].tolist()
+                        all_es_feat_tracks[best_match_track_id] = np.append(all_es_feat_tracks[best_match_track_id], [old_rep_track]*time_interpolate, axis=0)
+
+                    ### then do update
+                    all_es_feat_tracks[best_match_track_id] = np.append(all_es_feat_tracks[best_match_track_id], [es_feature], axis=0) # add more feature for this track
+                    all_start_end_offset_track[best_match_track_id][-1] = idx_frame # change index frame
 
                     if self.args.visualize_debug_face_track == True:
                     # FOR VISUALIZING ONLY
@@ -299,7 +343,18 @@ class VisualES():
         if self.args.visualize_debug_face_track == True:
             output.release()
 
-        return all_tracks
+
+        # filter again es signals, ignoring those tracks having length lesser than pre-defined numbers
+        all_es_feat_tracks_filter = []
+        all_start_end_offset_track_filter = []
+
+        for es_feat_track, se_track in zip(all_es_feat_tracks, all_start_end_offset_track):
+            length = es_feat_track.shape[0]
+            if length >= self.args.len_face_tracks:
+                all_es_feat_tracks_filter.append(es_feat_track)
+                all_start_end_offset_track_filter.append(se_track)
+
+        return all_es_feat_tracks_filter, None, all_start_end_offset_track_filter
 
             
 if __name__ == "__main__":
