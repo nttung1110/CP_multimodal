@@ -2,6 +2,7 @@ import os
 import numpy as np 
 import cv2
 import pdb
+import sys
 import bbox_visualizer as bbv
 import torch
 import json
@@ -44,20 +45,26 @@ def run_pipeline_single_video(args, ES_extractor):
     # ES extractor
     es_signals, all_emotion_category_tracks, all_start_end_offset_track = ES_extractor.extract_sequence_frames(args.path_test_video)
 
-    no_cp_confirm = False
+    no_cp_confirm1 = False
+    no_cp_confirm2 = False
+    la = []
+    res_stat = []
+    res_cp = []
+    res_score = []
 
     if len(es_signals) == 0:
-        # no face records => no human appearance => no change point 
-        no_cp_confirm = True
-        la = []
-        res_stat = []
+        no_cp_confirm1 = True
 
-    if no_cp_confirm is False:
-
-
+    if no_cp_confirm1 is False:
         # UCP Detector
         # es_signals = np.load("../ES_extractor/test_es_feature.npy", allow_pickle=True)
-        all_peaks_track, all_scores_track = detect_CP_tracks(es_signals)
+        all_peaks_track, all_scores_track, all_start_end_offset_track = detect_CP_tracks(es_signals, all_start_end_offset_track)
+        
+        if len(all_peaks_track) == 0:
+            no_cp_confirm2 = True
+
+    if no_cp_confirm1 is False and no_cp_confirm2 is False:
+
 
         softmax = torch.nn.Softmax(dim=1)
         # Post-processing step: Refining peak index with start_end_offset_track
@@ -97,11 +104,6 @@ def run_pipeline_single_video(args, ES_extractor):
 
         # res_cp = [13, 88]
 
-        # save cp result
-        file_id = args.path_test_video.split('/')[-1].split('.')[0]
-        file_name = file_id+".json"
-        write_path = osp.join(args.output_cp_result_path, file_name)
-
         # write result stat
         
         la = [(a/fps).astype(int).tolist() for a in all_refined_peaks_track]
@@ -129,11 +131,19 @@ def run_pipeline_single_video(args, ES_extractor):
                 "stat_segment_seconds_total_cp_accum": res_stat
                 }
 
+    # save cp result
+    file_id = args.path_test_video.split('/')[-1].split('.')[0]
+    file_name = file_id+".json"
+    write_path = osp.join(args.output_cp_result_path, file_name)
+
     with open(write_path, 'w') as fp:
         json.dump(result, fp, indent=4)
 
 
 if __name__ == "__main__":
+    # args pass
+    batch_run = sys.argv[1]
+
     # init argument
     args = DotMap()
     args.device = 'cuda'
@@ -143,10 +153,10 @@ if __name__ == "__main__":
     args.threshold_iou_min_track = 0.4
 
     # skip frame info
-    args.min_frame_per_second = 5
+    args.min_frame_per_second = 3
 
     # debug mode
-    args.max_idx_frame_debug = 1000
+    args.max_idx_frame_debug = 10000
 
     # running mode
     # args.max_idx_frame_debug = None
@@ -154,15 +164,16 @@ if __name__ == "__main__":
     args.len_face_tracks = 30
     # args.path_test_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video/M01003YN6.mp4"
     args.num_intervals = 100
-    args.output_cp_result_path = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/output_cp_3_optimize'
+
+    args.output_cp_result_path = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output_v1_'+batch_run
+    path_inference_video = os.path.join("/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video", batch_run)
 
     if os.path.isdir(args.output_cp_result_path) is False:
         os.mkdir(args.output_cp_result_path)
     
 
     args.max_cp_found = 3
-
-    path_inference_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video"
+    print("Running on video batch:", batch_run)
     
 
     # initialize ES extractor

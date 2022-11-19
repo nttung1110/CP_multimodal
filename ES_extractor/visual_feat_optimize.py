@@ -265,10 +265,15 @@ class VisualES():
 
                 face_imgs = frame[y1:y2, x1:x2]
                 emotion, scores = self.emotion_recognizer.predict_emotions(face_imgs, logits=True)
-                scores = softmax(torch.Tensor(np.array([scores])))
 
+                # softmax as feature
+                scores = softmax(torch.Tensor(np.array([scores])))
                 es_feature = scores[0].tolist() ### this is what we need
                 emotion_cat = emotion ### this is what we need
+
+                # raw feature
+                # es_feature = scores.tolist()
+                # emotion_cat = emotion
 
                 # =====================
                 # Stage 2.1: Finding to which track this es_feature belongs to based on iou
@@ -330,8 +335,8 @@ class VisualES():
                 all_box = [l[0] for l in draw_face_track_bbox]
                 all_id = ["ID:"+str(a[1]) for a in draw_face_track_bbox]
 
-                frame = bbv.draw_multiple_rectangles(frame, all_box)
-                frame = bbv.add_multiple_labels(frame, all_id, all_box)
+                # frame = bbv.draw_multiple_rectangles(frame, all_box)
+                # frame = bbv.add_multiple_labels(frame, all_id, all_box)
                 
                 output.write(frame)
 
