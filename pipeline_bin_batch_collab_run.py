@@ -176,7 +176,7 @@ if __name__ == "__main__":
     bin_run = sys.argv[2]
 
     ##### Read specific bin batch json file #####
-    path_bin_batch_file = './index_bin_batch_record/'+bin_run+'.json'
+    path_bin_batch_file = './index_bin_batch_record_collab/'+bin_run+'.json'
 
     with open(path_bin_batch_file, 'r') as fp:
         bin_batch_record = json.load(fp)
