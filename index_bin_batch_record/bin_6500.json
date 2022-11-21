@@ -1,0 +1,14 @@
+{
+    "batch_0": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b04/M01003SG0.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_6500/batch_0/M01003SG0.json"
+        ]
+    },
+    "batch_1": {
+        "ls_inp_vid_path": [],
+        "ls_out_json_path": []
+    }
+}

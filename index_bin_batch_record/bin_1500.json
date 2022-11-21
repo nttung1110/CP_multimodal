@@ -1,0 +1,436 @@
+{
+    "batch_0": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003JJO.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01003JMP.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M01003JSB.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01003JTH.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01003JWL.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M01003K1N.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M01003K4X.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01003K53.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01003KG6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M01003KHO.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003JJO.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003JMP.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003JSB.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003JTH.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003JWL.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003K1N.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003K4X.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003K53.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003KG6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_0/M01003KHO.json"
+        ]
+    },
+    "batch_1": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M01003L2W.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01003LLR.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b20/M01003LS6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b20/M01003LYN.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b27/M01003M13.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01003MAI.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01003MK1.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01003MQK.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b01/M01003MS6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b15/M01003MX4.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003L2W.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003LLR.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003LS6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003LYN.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003M13.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003MAI.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003MK1.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003MQK.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003MS6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_1/M01003MX4.json"
+        ]
+    },
+    "batch_2": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b07/M01003N2Z.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M01003N43.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01003N4B.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b26/M01003N6D.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b07/M01003NF2.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M01003NTH.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b20/M01003NU1.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M01003NUE.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01003O3Y.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01003OAV.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003N2Z.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003N43.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003N4B.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003N6D.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003NF2.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003NTH.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003NU1.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003NUE.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003O3Y.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_2/M01003OAV.json"
+        ]
+    },
+    "batch_3": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b23/M01003OD7.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b07/M01003OS6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01003OVU.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b22/M01003OX8.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b27/M01003P3A.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003P9K.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M01003PDL.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003PE3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b09/M01003PF4.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01003PH9.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003OD7.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003OS6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003OVU.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003OX8.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003P3A.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003P9K.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003PDL.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003PE3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003PF4.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_3/M01003PH9.json"
+        ]
+    },
+    "batch_4": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b25/M01003PJ0.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M01003PJI.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b15/M01003PLH.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003PS5.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003PW5.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01003PZ0.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M01003Q1I.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b01/M01003Q1O.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b25/M01003Q62.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M01003QEY.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PJ0.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PJI.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PLH.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PS5.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PW5.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003PZ0.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003Q1I.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003Q1O.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003Q62.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_4/M01003QEY.json"
+        ]
+    },
+    "batch_5": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01003QI8.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M01003QIK.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b15/M01003QJU.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b24/M01003QM4.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003QMS.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b23/M01003QPQ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01003QY6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01003QZB.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01003R08.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003R2J.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QI8.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QIK.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QJU.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QM4.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QMS.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QPQ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QY6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003QZB.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003R08.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_5/M01003R2J.json"
+        ]
+    },
+    "batch_6": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01003R3Y.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b08/M01003RBP.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01003RE1.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b21/M01003RE3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b11/M01003RHI.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01003RUO.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01003RVF.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b01/M01003RY3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b15/M01003S63.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b27/M01003S65.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003R3Y.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RBP.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RE1.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RE3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RHI.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RUO.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RVF.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003RY3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003S63.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_6/M01003S65.json"
+        ]
+    },
+    "batch_7": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b26/M01003SEI.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b21/M01003SOB.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b11/M01003SZ3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003T5A.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b11/M01003TB5.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b22/M01003TE7.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b01/M01003TMQ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003TZT.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01003U1O.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01003U4V.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003SEI.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003SOB.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003SZ3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003T5A.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003TB5.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003TE7.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003TMQ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003TZT.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003U1O.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_7/M01003U4V.json"
+        ]
+    },
+    "batch_8": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M01003U6O.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b11/M01003UHE.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b25/M01003UP8.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b24/M01003UPF.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003UQF.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b22/M01003US1.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b15/M01003V6X.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b07/M01003V99.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b23/M01003VAT.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b01/M01003VDA.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003U6O.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003UHE.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003UP8.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003UPF.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003UQF.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003US1.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003V6X.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003V99.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003VAT.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_8/M01003VDA.json"
+        ]
+    },
+    "batch_9": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M01003VDG.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01003VEG.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b08/M01003VFN.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003VGR.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01003VUH.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003VWM.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003W1V.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01003W87.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01003W9K.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b24/M01003WC5.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VDG.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VEG.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VFN.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VGR.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VUH.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003VWM.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003W1V.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003W87.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003W9K.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_9/M01003WC5.json"
+        ]
+    },
+    "batch_10": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003WEJ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003WGW.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M01003WHF.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M01003WIR.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M01003WJ1.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01003WLO.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01003WV7.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b30/M01003WZF.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01003X30.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b27/M01003X6N.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WEJ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WGW.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WHF.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WIR.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WJ1.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WLO.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WV7.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003WZF.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003X30.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_10/M01003X6N.json"
+        ]
+    },
+    "batch_11": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b09/M01003XUJ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01003Y93.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01003YAV.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01003YC4.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01003YEW.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b20/M01003YKG.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b24/M01003YL3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M01003YPC.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M01003Z18.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b08/M01003ZUY.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003XUJ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003Y93.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YAV.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YC4.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YEW.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YKG.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YL3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003YPC.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003Z18.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_11/M01003ZUY.json"
+        ]
+    },
+    "batch_12": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b08/M0100409T.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M010040NT.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b20/M010040WH.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M010042DZ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M010043BL.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M0100443F.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01004442.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M0100474M.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M0100478T.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b22/M010047H7.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M0100409T.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M010040NT.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M010040WH.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M010042DZ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M010043BL.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M0100443F.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M01004442.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M0100474M.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M0100478T.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_12/M010047H7.json"
+        ]
+    },
+    "batch_13": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M010048MU.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b19/M0100492M.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b04/M0100493B.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M010049DD.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M010049UL.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b09/M01004ACS.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b29/M01004AL9.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M01004D0U.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b28/M01004D5B.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b05/M01004DMO.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M010048MU.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M0100492M.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M0100493B.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M010049DD.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M010049UL.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M01004ACS.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M01004AL9.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M01004D0U.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M01004D5B.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_13/M01004DMO.json"
+        ]
+    },
+    "batch_14": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01004FS6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b07/M01004FSC.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b03/M01004G2N.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01004GSY.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b27/M01004H4S.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01004HT4.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01004IM9.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b16/M01004IVI.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01004IVT.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b00/M01004JJG.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004FS6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004FSC.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004G2N.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004GSY.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004H4S.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004HT4.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004IM9.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004IVI.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004IVT.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_14/M01004JJG.json"
+        ]
+    },
+    "batch_15": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b21/M01004JM6.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b25/M01004LII.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b06/M01004LKO.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b04/M01004LMQ.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b17/M01004MQY.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01004OL3.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b26/M01004PXR.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b18/M01004QXW.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b04/M01004TA8.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b14/M01004ULV.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004JM6.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004LII.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004LKO.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004LMQ.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004MQY.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004OL3.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004PXR.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004QXW.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004TA8.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_15/M01004ULV.json"
+        ]
+    },
+    "batch_16": {
+        "ls_inp_vid_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b24/M01004VWK.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b13/M01004WOK.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b09/M01004K8X.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b02/M01003OQG.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b12/M01003M0I.mp4",
+            "/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video/b10/M01003K15.mp4"
+        ],
+        "ls_out_json_path": [
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01004VWK.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01004WOK.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01004K8X.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01003OQG.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01003M0I.json",
+            "/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output/bin_1500/batch_16/M01003K15.json"
+        ]
+    }
+}

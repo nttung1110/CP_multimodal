@@ -10,6 +10,7 @@ import torch
 from facenet_pytorch import MTCNN
 from hsemotion.facial_emotions import HSEmotionRecognizer
 from dotmap import DotMap
+from moviepy.editor import *
 
 def cal_iou(bbox1, bbox2):
     """
@@ -193,10 +194,17 @@ class VisualES():
         #   + l represents for list of face location for that track
         #   + t represents for frame-index to the video of that track
         print("===========Finding face tracks==============")
-        cap = cv2.VideoCapture(video_path)
-        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        width = int(cap.get(3)) # get width
-        height = int(cap.get(4)) #get height
+        # cap = cv2.VideoCapture(video_path)
+        # frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        # width = int(cap.get(3)) # get width
+        # height = int(cap.get(4)) #get height
+
+        clip = VideoFileClip(video_path)
+        frame_count = int(clip.fps * clip.duration)
+        width = int(clip.w)
+        height = int(clip.h)
+        frames_list = clip.iter_frames()
+
         softmax = torch.nn.Softmax(dim=1)
         
         all_tracks = []
@@ -212,11 +220,7 @@ class VisualES():
             fourcc = cv2.VideoWriter_fourcc(*'MPEG')
             output = cv2.VideoWriter(os.path.join('./test_debug_output', 'out_test_vid.mp4'), fourcc, 5.0, (width, height))
 
-        while(cap.isOpened()):
-            ret, frame = cap.read()
-            
-            if ret == False:
-                break
+        for idx, frame in enumerate(frames_list):
 
             # skip frame
             idx_frame += 1
@@ -227,7 +231,7 @@ class VisualES():
             draw_face_track_bbox = []
             progress_frame = str(idx_frame)+"/"+str(self.args.total_vid_frame)
                 
-            print("Processing frame: ", progress_frame, video_path, self.args.batch_run)
+            print("Processing frame: ", progress_frame, video_path, self.args.batch_run, self.args.bin_run)
 
             # detect faces
             bounding_boxes, probs = self.face_detector.detect(frame, landmarks=False)
@@ -344,7 +348,6 @@ class VisualES():
                 if idx_frame >= self.args.max_idx_frame_debug:
                     break
 
-        cap.release()
         if self.args.visualize_debug_face_track == True:
             output.release()
 
@@ -386,5 +389,6 @@ if __name__ == "__main__":
     # save feature for later usage
     # with open('test_es_feature.npy', 'wb') as f:
     #     np.save(f, np.array(all_es_feat_tracks))
+
 
 

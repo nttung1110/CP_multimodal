@@ -12,10 +12,12 @@ from facenet_pytorch import MTCNN
 from hsemotion.facial_emotions import HSEmotionRecognizer
 from dotmap import DotMap
 from datetime import datetime
+from moviepy.editor import *
 
 
 
-from ES_extractor.visual_feat_optimize import cal_iou, VisualES
+
+from ES_extractor.visual_feat_movie import cal_iou, VisualES
 
 from UCP.inference_ucp import detect_CP_tracks
 
@@ -24,9 +26,14 @@ from CP_aggregator.aggregator_core import SimpleAggregator
 
 
 def run_pipeline_single_video(args, ES_extractor):
-    cap = cv2.VideoCapture(args.path_test_video)
-    frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    fps = cap.get(cv2.CAP_PROP_FPS)
+    # cap = cv2.VideoCapture(args.path_test_video)
+    # frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    # fps = cap.get(cv2.CAP_PROP_FPS)
+    # print("Total video frames:", frame_count)
+
+    clip = VideoFileClip(args.path_test_video)
+    frame_count = int(clip.fps * clip.duration)
+    fps = int(clip.fps)
     print("Total video frames:", frame_count)
     
     # reconfig argument
@@ -133,18 +140,14 @@ def run_pipeline_single_video(args, ES_extractor):
                 }
 
     # save cp result
-    file_id = args.path_test_video.split('/')[-1].split('.')[0]
-    file_name = file_id+".json"
-    write_path = osp.join(args.output_cp_result_path, file_name)
 
-    with open(write_path, 'w') as fp:
+    with open(args.path_out_json, 'w') as fp:
         json.dump(result, fp, indent=4)
 
 
 if __name__ == "__main__":
-    # args pass
-    batch_run = sys.argv[1]
 
+    ##### Defining arguments #####
     # init argument
     args = DotMap()
     args.device = 'cuda'
@@ -152,32 +155,15 @@ if __name__ == "__main__":
     args.model_name = 'enet_b0_8_best_afew'
     args.threshold_dying_track_len = 30
     args.threshold_iou_min_track = 0.4
-
     # skip frame info
     args.min_frame_per_second = 3
-
     # debug mode
-    args.max_idx_frame_debug = 10000
-
-    # running mode
-    # args.max_idx_frame_debug = None
-
+    args.max_idx_frame_debug = None
     args.len_face_tracks = 30
-    # args.path_test_video = "/home/nttung/research/Monash_CCU/mini_eval/visual_data/r2_v1_video/all_DARPA_video/format_mp4_video/M01003YN6.mp4"
     args.num_intervals = 100
-
-    args.output_cp_result_path = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/VIDEO_CCU_output_v1_'+batch_run
-    path_inference_video = os.path.join("/home/nttung/research/Monash_CCU/mini_eval/sub_data/converted_video", batch_run)
-
-    if os.path.isdir(args.output_cp_result_path) is False:
-        os.mkdir(args.output_cp_result_path)
-    
-
     args.max_cp_found = 3
-    print("Running on video batch:", batch_run)
-    
-
-    # initialize ES extractor
+        
+    ##### Initialize Model #####
 
     face_detector = MTCNN(keep_all=False, post_process=False, min_face_size=40, device=args.device)
     emotion_recognizer = HSEmotionRecognizer(model_name=args.model_name, device=args.device)
@@ -185,9 +171,38 @@ if __name__ == "__main__":
     ES_extractor = VisualES(args)
     ES_extractor.initialize_model(face_detector, emotion_recognizer)
 
-    for video_name in os.listdir(path_inference_video):
-        full_path_video = osp.join(path_inference_video, video_name)
-        
-        args.path_test_video = full_path_video
+    # define which batch and which bin to perform inference
+    batch_run = sys.argv[1]
+    bin_run = sys.argv[2]
 
-        run_pipeline_single_video(args, ES_extractor)  
+    ##### Read specific bin batch json file #####
+    path_bin_batch_file = '/home/nttung/research/Monash_CCU/mini_eval/multimodal_module/index_bin_batch_record/'+bin_run+'.json'
+
+    with open(path_bin_batch_file, 'r') as fp:
+        bin_batch_record = json.load(fp)
+
+    # check if batch exist in bin
+    if batch_run not in bin_batch_record:
+        print('!!! Batch string not exist in bin batch record, check again!!!')
+    else:
+        list_inp_vid_path = bin_batch_record[batch_run]['ls_inp_vid_path']
+        list_out_json_path = bin_batch_record[batch_run]['ls_out_json_path']
+
+        # mkdir path if it does not exist
+        tmp = list_out_json_path[0].split('/')
+        tmp = tmp[:-1]
+        global_path_out_batch_bin_json = '/'.join(tmp)
+
+        if osp.isdir(global_path_out_batch_bin_json) is False:
+            os.mkdir(global_path_out_batch_bin_json)
+
+        ##### Perform inference on this batch #####
+        for path_test_video, path_out_json in zip(list_inp_vid_path, list_out_json_path):
+            
+            args.path_test_video = path_test_video
+            args.path_out_json = path_out_json
+            args.batch_run = batch_run
+            args.bin_run = bin_run
+
+
+            run_pipeline_single_video(args, ES_extractor)  
