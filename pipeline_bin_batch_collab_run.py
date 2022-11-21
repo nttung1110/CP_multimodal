@@ -199,11 +199,12 @@ if __name__ == "__main__":
         ##### Perform inference on this batch #####
         for path_test_video, path_out_json in zip(list_inp_vid_path, list_out_json_path):
             
-            print('Processing:', args.path_test_video, args.path_out_json, self.args.batch_run, self.args.bin_run)
             args.path_test_video = path_test_video
             args.path_out_json = path_out_json
             args.batch_run = batch_run
             args.bin_run = bin_run
+
+            print('Processing:', args.path_test_video, args.path_out_json, args.batch_run, args.bin_run)
 
 
             run_pipeline_single_video(args, ES_extractor)  
