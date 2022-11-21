@@ -1,0 +1,30 @@
+{
+    "batch_0": {
+        "ls_inp_vid_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4000/batch_0/M01003JPN.mp4",
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4000/batch_0/M01003SXE.mp4"
+        ],
+        "ls_out_json_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4000/batch_0/M01003JPN.json",
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4000/batch_0/M01003SXE.json"
+        ]
+    },
+    "batch_1": {
+        "ls_inp_vid_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4000/batch_1/M01003VFD.mp4",
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4000/batch_1/M01003YOZ.mp4"
+        ],
+        "ls_out_json_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4000/batch_1/M01003VFD.json",
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4000/batch_1/M01003YOZ.json"
+        ]
+    },
+    "batch_2": {
+        "ls_inp_vid_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4000/batch_2/M01003YS2.mp4"
+        ],
+        "ls_out_json_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4000/batch_2/M01003YS2.json"
+        ]
+    }
+}

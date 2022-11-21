@@ -1,0 +1,14 @@
+{
+    "batch_0": {
+        "ls_inp_vid_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_video/bin_4500/batch_0/M01004HKX.mp4"
+        ],
+        "ls_out_json_path": [
+            "/content/drive/MyDrive/collab_result/collab_bin_batch_prediction/bin_4500/batch_0/M01004HKX.json"
+        ]
+    },
+    "batch_1": {
+        "ls_inp_vid_path": [],
+        "ls_out_json_path": []
+    }
+}
