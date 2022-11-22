@@ -169,10 +169,10 @@ def run_pipeline_single_video(args, ES_extractor):
                 "final_cp_llr": final_res_score,
                 "type": "video", 
                 "input_path": args.path_test_video,
-                "total_video_frame": frame_count, 
+                "total_video_frame": large_frame_count, 
                 "num_frame_skip": args.skip_frame,
                 'time_processing': int(time_processing.total_seconds()),
-                "fps": int(fps), 
+                "fps": int(large_fps), 
                 "individual_cp_result": final_la,
                 "stat_segment_seconds_total_cp_accum": final_res_stat
                 }
