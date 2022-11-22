@@ -140,16 +140,16 @@ def run_pipeline_single_video(args, ES_extractor):
 
             # write result stat
             
-            la = [(a/fps).astype(int).tolist() for a in all_refined_peaks_track]
+            la = [(a/args.fps).astype(int).tolist() for a in all_refined_peaks_track]
 
             # convert res_segment_ids to second-based
-            res_segment_ids_second = [int(res/fps) for res in res_segment_ids]
+            res_segment_ids_second = [int(res/args.fps) for res in res_segment_ids]
 
             # convert stat infor to second-based
             res_stat = []
 
             for a, b in zip(res_segment_ids, stat_total_cp_interval):
-                a_second = int(a/fps)
+                a_second = int(a/args.fps)
                 res_stat.append((a_second, b))
 
             # STEP FOR SPECIAL TREATMENT, SHIFT CP RESULT TO MATCH INDEX OF EACH SEGMENT => SHIFT res_cp only
