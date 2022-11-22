@@ -207,7 +207,7 @@ if __name__ == "__main__":
     args.min_seconds_per_segment = 480
 
     # machine inference: jvn or collab
-    args.machine_run = 'jvn'
+    # args.machine_run = 'jvn'
         
     ##### Initialize Model #####
 
@@ -220,6 +220,9 @@ if __name__ == "__main__":
     # define which batch and which bin to perform inference
     batch_run = sys.argv[1]
     bin_run = sys.argv[2]
+    machine_run = sys.argv[3]
+
+    args.machine_run = machine_run
 
     ##### Read specific bin batch json file #####
     if args.machine_run == 'jvn':
@@ -255,5 +258,8 @@ if __name__ == "__main__":
 
             print('Processing:', args.path_test_video, args.path_out_json, args.batch_run, args.bin_run)
 
+            if os.path.isfile(args.path_out_json) is True:
+                print('...Result file exists, skipping...')
+                continue
 
             run_pipeline_single_video(args, ES_extractor)  
