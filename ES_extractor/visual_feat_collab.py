@@ -190,7 +190,7 @@ class VisualES():
     #     return all_es_feat_tracks, all_emotion_category_tracks, all_start_end_offset_track
 
 
-    def extract_sequence_frames(self, video_path):
+    def extract_sequence_frames(self, clip):
         # finding all face tracks in video. A face track is defined as t = (l, t) where:
         #   + l represents for list of face location for that track
         #   + t represents for frame-index to the video of that track
@@ -200,7 +200,7 @@ class VisualES():
         # width = int(cap.get(3)) # get width
         # height = int(cap.get(4)) #get height
 
-        clip = VideoFileClip(video_path)
+        # clip = VideoFileClip(video_path)
         frame_count = int(clip.fps * clip.duration)
         width = int(clip.w)
         height = int(clip.h)
