@@ -47,6 +47,9 @@ def run_pipeline_single_video(args, ES_extractor):
     # now iterate and process each segment
     for i in range(n_segment+1):
         start_second = i*args.min_seconds_per_segment
+
+        if start_second >= large_clip.duration:
+            break
         
         if i+1 > n_segment:
             end_second = length_in_seconds
