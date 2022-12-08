@@ -66,7 +66,7 @@ def display(X, cps_true, score=None, cps_pred=None, plot_peak_height=10, s_max=1
 
 def detect_cp(data):
 
-    cpd = OnlineNNRuLSIF(net='default', scaler="default", metric="KL_sym", periods=1, window_size=5,
+    cpd = OnlineNNRuLSIF(net='default', scaler="default", metric="KL_sym", periods=3, window_size=5,
                                  lag_size=5, step=10, n_epochs=100, lr=0.01, lam=0.0001, optimizer="Adam", alpha=0.5)
     
     scores, peaks = cpd.predict(data)

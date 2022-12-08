@@ -175,7 +175,7 @@ if __name__ == "__main__":
     ES_extractor.initialize_model(face_detector, emotion_recognizer)
 
     ##### Read corrupted json records file #####
-    path_bin_batch_file = '/home/nttung/research/Monash_CCU/mini_eval/troubleshoot/troubleshoot_all_bins_v1.json'
+    path_bin_batch_file = '/home/nttung/research/Monash_CCU/mini_eval/troubleshoot/troubleshoot_all_bins_v2.json'
 
     with open(path_bin_batch_file, 'r') as fp:
         bin_batch_record = json.load(fp)

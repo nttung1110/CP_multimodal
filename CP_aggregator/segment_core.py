@@ -17,6 +17,11 @@ class UniformSegmentator():
         '''
         sequence_length = int(l / num_intervals)
 
+        if sequence_length == 1:
+            return [0, num_intervals, l]
+        if sequence_length == 0:
+            return [0, l]
+
         list_index = []
         start = 0
         while True:

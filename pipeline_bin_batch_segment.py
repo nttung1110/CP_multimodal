@@ -53,6 +53,7 @@ def run_pipeline_single_video(args, ES_extractor):
         
         if i+1 > n_segment:
             end_second = length_in_seconds
+
         else:
             end_second = (i+1)*args.min_seconds_per_segment
 
@@ -207,7 +208,7 @@ if __name__ == "__main__":
     args.num_intervals = 100
     args.max_cp_found = 3
     # THIS PARAMETERS IS ONLY USED FOR SPECIAL VIDEO TREATMENT
-    args.min_seconds_per_segment = 480
+    args.min_seconds_per_segment = 200
 
     # machine inference: jvn or collab
     # args.machine_run = 'jvn'
